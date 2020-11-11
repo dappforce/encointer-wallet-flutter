@@ -8,4 +8,5 @@ const Map<String, String> enBazaar = {
   'recently.added': 'Recently added',
   'stores': 'Stores',
   'store.insert': '+ Add new store',
+  'store.create': 'New store',
 };
