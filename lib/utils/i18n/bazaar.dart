@@ -9,4 +9,5 @@ const Map<String, String> enBazaar = {
   'stores': 'Stores',
   'store.insert': '+ Add new store',
   'store.create': 'New store',
+  'store.name': 'Store name',
 };
