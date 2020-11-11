@@ -30,7 +30,19 @@ class _CreateStorePageState extends State<CreateStorePage> {
     return Scaffold(
       appBar: AppBar(title: Text(dic['store.create'])),
       body: SafeArea(
-        child: Text(dic['store.create']),
+        child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Name',
+                ),
+              )
+            ],
+          )
+      ),
       ),
     );
   }
