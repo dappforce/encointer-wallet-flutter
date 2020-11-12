@@ -2,6 +2,7 @@ import 'package:encointer_wallet/common/components/accountAdvanceOption.dart';
 import 'package:encointer_wallet/page-encointer/homePage.dart';
 import 'package:encointer_wallet/page/account/create/createAccountForm.dart';
 import 'package:encointer_wallet/service/substrateApi/api.dart';
+import 'package:encointer_wallet/page-encointer/bazaar/components/storeClass.dart';
 import 'package:encointer_wallet/store/app.dart';
 import 'package:encointer_wallet/utils/i18n/index.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,11 +23,19 @@ class _CreateStorePageState extends State<CreateStorePage> {
 
   final AppStore store;
 
+  TextEditingController nameController = TextEditingController();
+
+  void addItemToList(){
+    setState(() {
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
 
     final Map dic = I18n.of(context).bazaar;
+
     return Scaffold(
       appBar: AppBar(title: Text(dic['store.create'])),
       body: SafeArea(
@@ -35,14 +44,20 @@ class _CreateStorePageState extends State<CreateStorePage> {
           child: Column(
             children: <Widget>[
               TextField(
+                controller: nameController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Name',
-                ),
-              )
+                  labelText: dic['store.name']),
+              ),
+              RaisedButton(
+                child: Text('Add'),
+                onPressed: () {
+                  addItemToList();
+                },
+              ),
             ],
-          )
-      ),
+          ),
+        ),
       ),
     );
   }
